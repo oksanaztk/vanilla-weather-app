@@ -11,33 +11,42 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
-      <!-- Content here -->
-    </div>
-    <h1>Kyiv, Ukraine</h1>
-    <ul>
-      <li>Frieday, 7:00</li>
-      <li>Snow</li>
-    </ul>
-    <div class="row">
-      <div class="col-md-6">
-        <img
-          src="https://ssl.gstatic.com/onebox/weather/64/snow_light.png"
-          alt="Snow"
-        />
-        -1°C | °F
-      </div>
-      <div class="col-md-6">
+      <div class="weather-app">
+        <h1>Kyiv, Ukraine</h1>
         <ul>
-          <li>Precipitation: 49%</li>
-          <li>Humidity: 82%</li>
-          <li>Wind: 14 km/h</li>
+          <li>Frieday, 7:00</li>
+          <li>Snow</li>
         </ul>
+        <div class="row">
+          <div class="col-6">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/snow_light.png"
+              alt="Snow"
+            />
+            -1°C | °F
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Precipitation: 49%</li>
+              <li>Humidity: 82%</li>
+              <li>Wind: 14 km/h</li>
+            </ul>
+          </div>
+        </div>
       </div>
+      <small>
+        <a href="https://github.com/oksanaztk/vanilla-weather-app">
+          target="_blank" Open-source code
+        </a>
+        by Oksana Kovalyk
+      </small>
     </div>
-    <script src="src/index.js"></script>
+    <script src="src/app.js"></script>
   </body>
 </html>
