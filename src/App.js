@@ -29,15 +29,22 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  cityElement.innerHTML = response.data.name;
-  descriptionElement.innerHTML = response.data.weather[0].description;
-  humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = Math.round(response.data.main.wind.speed);
-  dataElement.innerHTML = formatDate(response.data.dt * 1000);
+  let iconElement = document.querySelector("#icon");
 }
+temperatureElement.innerHTML = Math.round(response.data.main.temp);
+cityElement.innerHTML = response.data.name;
+descriptionElement.innerHTML = response.data.weather[0].description;
+humidityElement.innerHTML = response.data.main.humidity;
+windElement.innerHTML = Math.round(response.data.main.wind.speed);
+dateElement.innerHTML = formatDate(response.data.dt * 1000);
+iconElement.setAttribute(
+  "src",
+  `http://openwethwemap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+);
+iconElement.setAttribute("alt", response.data.weather[0].description);
 
 let apiKey = "23bd3afe644bf1fdo0bt62589c58a8f7";
+let city = "Kyiv";
 let apiUrl =
   "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric";
 
